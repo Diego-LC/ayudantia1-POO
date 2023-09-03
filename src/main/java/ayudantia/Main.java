@@ -147,9 +147,7 @@ public class Main {
         }
         Double[] promedio = new Double[tablaTemp.length*tablaTemp[0].length];
         for(int i = 0; i < tablaTemp.length; i++){
-            for(int j = 0; j < tablaTemp[i].length; j++){
-                promedio[i*tablaTemp[i].length + j] = tablaTemp[i][j];
-            }
+            System.arraycopy(tablaTemp[i], 0, promedio, i * tablaTemp[i].length, tablaTemp[i].length);
         }
         if (promedio[0] == null){
             return null;
